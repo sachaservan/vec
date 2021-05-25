@@ -114,15 +114,14 @@ func (a *Vec) Normalize() *Vec {
 }
 
 // Scale multiplies each coordinate by c
-// and returns a new vector
+// and returns the vector
 func (a *Vec) Scale(c float64) *Vec {
 
-	b := a.Copy()
 	for i := 0; i < a.Size(); i++ {
-		b.Coords[i] *= c
+		a.Coords[i] *= c
 	}
 
-	return b
+	return a
 }
 
 // Coord returns the value of the ith coordinate in a
