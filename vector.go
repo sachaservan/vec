@@ -98,6 +98,18 @@ func (a *Vec) Normalize() *Vec {
 	return a
 }
 
+// Scale multiplies each coordinate by c
+// and returns a new vector
+func (a *Vec) Scale(c float64) *Vec {
+
+	b := a.Copy()
+	for i := 0; i < a.Size(); i++ {
+		b.Coords[i] *= c
+	}
+
+	return b
+}
+
 // Coord returns the value of the ith coordinate in a
 func (a *Vec) Coord(i int) float64 {
 	return a.Coords[i]
