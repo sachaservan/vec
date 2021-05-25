@@ -80,6 +80,21 @@ func (a *Vec) Dot(b *Vec) (float64, error) {
 	return res, nil
 }
 
+// Add returns the vector addition of a and b
+// and sets a to the result
+func (a *Vec) Add(b *Vec) (*Vec, error) {
+
+	if len(a.Coords) != len(b.Coords) {
+		return nil, errors.New("cannot sum different sized vectors")
+	}
+
+	for i := 0; i < len(a.Coords); i++ {
+		a.Coords[i] += b.Coords[i]
+	}
+
+	return a, nil
+}
+
 // Normalize makes the vector `a` a unit vector
 // and returns it
 func (a *Vec) Normalize() *Vec {
