@@ -1,3 +1,0 @@
-package vec
-
-// TODO
