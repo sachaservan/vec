@@ -80,6 +80,24 @@ func (a *Vec) Dot(b *Vec) (float64, error) {
 	return res, nil
 }
 
+// Normalize makes the vector `a` a unit vector
+// and returns it
+func (a *Vec) Normalize() *Vec {
+
+	norm := float64(0)
+	for i := 0; i < a.Size(); i++ {
+		norm += a.Coords[i] * a.Coords[i]
+	}
+
+	norm = math.Sqrt(norm)
+
+	for i := 0; i < a.Size(); i++ {
+		a.Coords[i] /= norm
+	}
+
+	return a
+}
+
 // Coord returns the value of the ith coordinate in a
 func (a *Vec) Coord(i int) float64 {
 	return a.Coords[i]

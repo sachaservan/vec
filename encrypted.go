@@ -7,10 +7,10 @@ import (
 	"math/big"
 	"math/rand"
 
+	"time"
+
 	"github.com/ncw/gmp"
 	"github.com/sachaservan/paillier"
-
-	"time"
 )
 
 // EncryptedVec is a vector of encrypted float64 coordinates
